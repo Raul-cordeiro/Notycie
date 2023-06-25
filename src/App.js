@@ -10,16 +10,6 @@ import ShareButton from './compartilhar.jsx';
 
 
 
-
-
-
-
-
-
-
-
-
-
 function NoticiaCard({ noticia, onShare }) {
   
   return (
@@ -28,9 +18,10 @@ function NoticiaCard({ noticia, onShare }) {
       <section>
 <NavBar /> {/* Incluindo o componente NavBar */}
 </section>
+
          
       <div>
-        <img className='logo' src='C:\noticias\notycie\public\logo 192.jpg' alt='logo' ></img>
+        
         <p className='bem-vindo' >
         Raul Cordeiro Tecnologias</p>
       </div>
@@ -38,11 +29,11 @@ function NoticiaCard({ noticia, onShare }) {
         <p className='bem-vindo2'> Notícias da BBC de Londres</p>
         
       </div>
-      <img className="noticia-image" src={noticia.urlToImage} alt={noticia.title} />
-      <h1 className="noticia-title">{noticia.title}</h1>
+        <img className="noticia-image" src={noticia.urlToImage} alt={noticia.title} />
+        <h1 className="noticia-title">{noticia.title}</h1>
        
-      <h2 className="noticia-description">{noticia.description}</h2>
-      <a className="noticia-url" href={noticia.url} target="_blank" rel="noopener noreferrer">
+        <h2 className="noticia-description">{noticia.description}</h2>
+        <a className="noticia-url" href={noticia.url} target="_blank" rel="noopener noreferrer">
         {noticia.url}
       </a>
       <p className='quality'>Saiba Mais</p>
