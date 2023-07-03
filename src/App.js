@@ -14,32 +14,16 @@ function Noticia() {
         const noticias = data.articles;
 
         noticias.forEach(noticia => {
-          
-          const div = document.createElement('div');
-          div.className = 'noticia-card';
-
-          const img = document.createElement('img');
-          img.className = 'noticia-image';
-          img.src = noticia.urlToImage;
-
-          const h1 = document.createElement('h1');
-          h1.className = 'noticia-title';
-          h1.textContent = noticia.title;
-
-          const h2 = document.createElement('h2');
-          h2.className = 'noticia-description';
-          h2.textContent = noticia.description;
-
-          const a = document.createElement('a');
-          a.className = 'noticia-url';
-          a.href = noticia.url;
-          a.textContent = noticia.url;
-          <Compartilhar/>
-
-          div.appendChild(img);
-          div.appendChild(h1);
-          div.appendChild(h2);
-          div.appendChild(a);
+          const div = (
+            <div className="noticia-card">
+              <p className="noticia-texto">Texto antes da imagem</p>
+              <img className="noticia-image" src={noticia.urlToImage} alt={noticia.title} />
+              <h1 className="noticia-title">{noticia.title}</h1>
+              <h2 className="noticia-description">{noticia.description}</h2>
+              <a className="noticia-url" href={noticia.url}>{noticia.url}</a>
+              <Compartilhar />
+            </div>
+          );
 
           if (noticia.category === 'esporte') {
             document.getElementById("esportes").appendChild(div);
@@ -59,13 +43,11 @@ function Noticia() {
 
   return (
     <div id='noticias'>
-      
       <div id="tecnologia"></div>
       <div id="esportes"></div>
       <div id="politica"></div>
       <div id="outros"></div>
     </div>
-    
   );
 }
 
