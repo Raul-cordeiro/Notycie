@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Tmdb from './tmdb'; // Importe o módulo Tmdb corretamente
 
-function App() {
+export default () => {
+  useEffect(() => {
+    const loadAll = async () => {
+      try {
+        let list = await Tmdb.getHomeList(); // Use a função getHomeList do módulo Tmdb
+        console.log(list);
+      } catch (error) {
+        console.error("Erro ao carregar lista:", error);
+      }
+    };
+
+    loadAll();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='page'>
+      Header
+      Destaques
+      Lista
     </div>
   );
 }
-
-export default App;
