@@ -3,9 +3,9 @@ const apibase = 'https://api.themoviedb.org/3';
 
 
 const basicFetch = async (endpoint) => {
-  const req = await fetch(`${apibase}${endpoint}`);
-  const json = await req.json();
-  return json;
+    const req = await fetch(`${apibase}${endpoint}`);
+    const json = await req.json();
+    return json;
 }
 
 export default {
