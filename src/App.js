@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
-import tmdb from './tmdb.jsx'; // Substitua 'seuarquivo.js' pelo caminho correto do seu arquivo
+import React, { useEffect, useState } from 'react';
+import tmdb from './tmdb.jsx';
+import MovieRow from './components/MovieRow.jsx'; // Certifique-se de que o caminho do componente está correto
 
 export default () => {
-  
+  const [movieList, setMovieList] = useState([]);
+
   useEffect(() => {
     const loadAll = async () => {
-      let list = await tmdb.getHomeList(); // Use a função getHomeList do objeto Tmdb
-      setMovieList(list);
-      
-    };
+        let list = await tmdb.getHomeList();
+        setMovieList(list);
+        console.log(list)
+        
+      };
 
     loadAll();
   }, []);
@@ -16,14 +19,8 @@ export default () => {
   return (
     <div className='page'>
       <section className='listas'>
-        {movieList.map((item,key)=>(
-          <div>
-            {item.title}
-          </div>
-
-        ))}
+      <MovieRow/>
       </section>
-      
     </div>
   );
 }
