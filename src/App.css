@@ -47,17 +47,4 @@ body{
 
   }
 
-  .footer img {
-    animation: slideImage 10s linear infinite;
-    transform: translateX(0); /* Inicia a imagem no lado direito da tela */
-}
-
-@keyframes slideImage {
-    0% {
-        transform: translateX(100%); /* Inicia a animação fora da tela */
-    }
-    100% {
-        transform: translateX(-100%); /* Termina a animação fora da tela */
-    }
-}
 

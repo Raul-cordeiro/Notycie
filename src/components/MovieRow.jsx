@@ -19,6 +19,10 @@ export default ({ title, items }) => {
     }
   };
 
+  const handleImageClick = (url) => {
+    window.open("https://www.netflix.com/br/", "_blank"); // Abre o URL em uma nova aba
+  };
+
   return (
     <div className="movieRow">
       <h2>{title}</h2>
@@ -32,7 +36,7 @@ export default ({ title, items }) => {
 
       <div className="movieRow__list" ref={movieRowRef}>
         {items.results.length > 0 && items.results.map((item, key) => (
-          <div className="item_img" key={key}>
+          <div className="item_img" key={key} onClick={() => handleImageClick(item.websiteUrl)}>
             <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.title} />
           </div>
         ))}
