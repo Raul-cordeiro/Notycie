@@ -1,1 +1,63 @@
-import App.js
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #111;
+    color: #FFF;
+    margin: 0;
+
+}
+.listas{
+    margin-top: -150px;
+}
+
+.letras{
+    color: #f7fb02;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: slide 30s linear infinite; /* Ajuste a duração conforme necessário */
+    margin-bottom: 02%;
+   
+  }
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+
+  .loading{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .footer img {
+    animation: slideImage 10s linear infinite;
+    transform: translateX(0); /* Inicia a imagem no lado direito da tela */
+}
+
+@keyframes slideImage {
+    0% {
+        transform: translateX(100%); /* Inicia a animação fora da tela */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina a animação fora da tela */
+    }
+}
+
