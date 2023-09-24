@@ -3,6 +3,7 @@ import tmdb from './tmdb.jsx';
 import MovieRow from './components/MovieRow.jsx'; // Certifique-se de que o caminho do componente está correto
 import FilmeDestaque from './components/FilmeDestaque.jsx';
 import Headersnovo from './components/Hedersnovo.jsx'
+import ClickCounter from './components/ClickCounter.jsx'
 
 
 
@@ -43,12 +44,15 @@ export default function App() {
       </section>
       
       <footer className='footers'>
+        <ClickCounter/>
+
+         <div className='whatsapp'>
+              <a href='https://api.whatsapp.com/send?phone=5562984687974&text=visitei%20seu%20site%20na%20net;'>WhatApp</a>
+          </div>
           <p className='letras'>
-              Raul Cordeiro Tecnologias
+              Raul Cordeiro Tecnologias Fone: 62 98468-7974
           </p>
-          <p className='letras'>
-              Fone: 62 98468-7974
-          </p>
+          
 
 
 
